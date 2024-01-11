@@ -16,6 +16,8 @@
 public class WordMixer
 {
     /**
+     * 
+     * 
      * Removes the character in word at position index
      */
     public static String removeLetterAtIndex(String word, int index)
@@ -32,15 +34,27 @@ public class WordMixer
      */
     public static String mixUpWord(String word)
     {
+        if(word.length() < 4){
+            return word;
+        }
+        String oldWord = word;
         String[] middle = new String[word.length() - 2];
         for(int i = 1; i < word.length() - 1; i++){
             middle[i - 1] = word.substring(i, i+1);
         }
-        String indexesUsed = 
-        for(String i : middle){
-            
+        while(word.equals(oldWord) && word.length() != 3){
+            String indexesUsed = "";
+            for(int i = 0; i < middle.length; i++){
+                String t = middle[i];
+                int index = -1;
+                while(index < 0 || indexesUsed.indexOf(index + "") > -1){
+                    index = (int)(Math.random()*middle.length);
+                }
+                indexesUsed += index;
+                word = word.substring(0, index + 1) + t + word.substring(index + 2, word.length());                
+            }
         }
-        return "";
+        return word;
     }
 
     /**
@@ -52,6 +66,11 @@ public class WordMixer
      */
     public static String[] mixItUp(String[] words)
     {
-        return null;    // replace this line
+        String[] newArr = words.clone();
+        for(int i = 0; i < words.length; i++){
+            newArr[i] = mixUpWord(words[i]);
+            
+        }
+        return newArr;    // replace this line
     }
 }

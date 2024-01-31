@@ -35,18 +35,18 @@ public class HorseBarn
      * Postcondition: The order of the horses is the same as before the consolidation.
      */
     public void consolidate(){
-        for(int i = 0; i < spaces.length; i++){
-            if(spaces[i] == null){
+        for(int i = 0; i < spaces.length; i++){ // loop through spaces
+            if(spaces[i] == null){ // check if space is empty
                 // find horse after a space
-                for(int t = i + 1; t < spaces.length; t++){
-                    if(spaces[t] != null){
-                        spaces[i] = spaces[t];
-                        spaces[t] = null;
-                        break;
+                boolean moved = false; // declare and initialize variable that tells when to stop moving elements
+                for(int t = i + 1; t < spaces.length; t++){ // loop through spaces after the current space in the parent loop
+                    if(spaces[t] != null && !moved){ // check if theres a space there and we havent already moved a horse
+                        spaces[i] = spaces[t]; // update the empty space to be the current space in the nested loop
+                        spaces[t] = null; // empty the space in the nested loop to ensure horses arent duplicated
+                        moved = true; // update the moved variable
                     }
                 }
             }
         }
-        System.out.println("---");
     }
 }

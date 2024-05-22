@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Time
+comment0.text=\n\ This\ Time\ class\ represents\ .\ .\ .\n\n\ @author\ \ (your\ name)\n\ @version\ (todays\ date)\n
+comment1.params=hour\ minute
+comment1.target=Time(int,\ int)
+comment2.params=
+comment2.target=int\ getHours()
+comment3.params=
+comment3.target=int\ getMinutes()
+comment4.params=hour\ minute
+comment4.target=void\ setTime(int,\ int)
+comment5.params=
+comment5.target=boolean\ isValidTime()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment7.params=another
+comment7.target=int\ minutesUntil(Time)
+numComments=8

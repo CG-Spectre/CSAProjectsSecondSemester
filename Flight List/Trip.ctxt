@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Trip
+comment1.params=s\ f
+comment1.target=Trip(java.lang.String,\ java.util.ArrayList)
+comment2.params=
+comment2.target=int\ getDuration()
+comment3.params=
+comment3.target=int\ getShortestLayover()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
